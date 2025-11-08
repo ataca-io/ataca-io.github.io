@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Enterprise-grade transaction monitoring platform with real-time webhooks, email alerts, and intelligent task management. Trusted by Fortune 500 companies.">
-    <meta name="keywords" content="transaction monitoring, API, webhooks, payment monitoring, fraud detection">
-    <meta property="og:title" content="ataca.io - Enterprise Transaction Monitoring">
-    <meta property="og:description" content="Monitor transactions in real-time with webhooks, email alerts, and portal tasks">
+    <meta name="description" content="ataca connect - Enterprise unified omnichannel messaging platform. Centralize WhatsApp, SMS, email, social media, and more in one intelligent inbox.">
+    <meta name="keywords" content="omnichannel messaging, unified inbox, customer communication, WhatsApp business, SMS marketing">
+    <meta property="og:title" content="ataca connect - Unified Omnichannel Messaging Platform">
+    <meta property="og:description" content="Connect with customers across every channel from one intelligent platform">
     <meta property="og:type" content="website">
-    <title>ataca.io - Enterprise Transaction Monitoring Platform</title>
+    <title>ataca connect - Unified Omnichannel Messaging Platform</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -105,12 +105,6 @@
             transform: translateY(-8px) scale(1.02);
         }
         
-        /* Code block styling */
-        .code-block {
-            background: rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
         /* Scroll animations */
         .fade-in {
             opacity: 0;
@@ -130,38 +124,13 @@
         .delay-300 { animation-delay: 0.3s; }
         .delay-400 { animation-delay: 0.4s; }
         
-        /* Video/demo section */
-        .demo-video-wrapper {
-            position: relative;
-            border-radius: 16px;
-            overflow: hidden;
-            background: rgba(0, 0, 0, 0.3);
-        }
-        
-        .play-button {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80px;
-            height: 80px;
-            background: rgba(99, 102, 241, 0.9);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
+        /* Channel icons animation */
+        .channel-icon {
             transition: all 0.3s ease;
         }
         
-        .play-button:hover {
-            background: rgba(99, 102, 241, 1);
-            transform: translate(-50%, -50%) scale(1.1);
-        }
-        
-        /* Stats counter animation */
-        .stat-number {
-            font-variant-numeric: tabular-nums;
+        .channel-icon:hover {
+            transform: scale(1.1) rotate(5deg);
         }
         
         /* Particles background effect */
@@ -218,6 +187,35 @@
         .mobile-menu.open {
             transform: translateX(0);
         }
+        
+        /* Demo video wrapper */
+        .demo-video-wrapper {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: rgba(99, 102, 241, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .play-button:hover {
+            background: rgba(99, 102, 241, 1);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
     </style>
 </head>
 <body class="dark-gradient-bg text-white">
@@ -227,22 +225,25 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
-                <div class="flex items-center space-x-2">
+                <div class="flex items-center space-x-3">
                     <div class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
                         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
                         </svg>
                     </div>
-                    <span class="text-xl font-bold">ataca.io</span>
+                    <div>
+                        <div class="text-xl font-bold">ataca connect</div>
+                        <div class="text-xs text-gray-400">Unified Messaging</div>
+                    </div>
                 </div>
                 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
+                    <a href="#channels" class="text-gray-300 hover:text-white transition">Channels</a>
                     <a href="#features" class="text-gray-300 hover:text-white transition">Features</a>
-                    <a href="#api" class="text-gray-300 hover:text-white transition">API</a>
-                    <a href="#use-cases" class="text-gray-300 hover:text-white transition">Use Cases</a>
+                    <a href="#integrations" class="text-gray-300 hover:text-white transition">Integrations</a>
                     <button class="px-6 py-2.5 btn-primary text-white rounded-lg font-semibold">
-                        Start Building →
+                        Start Free Trial →
                     </button>
                 </div>
                 
@@ -265,11 +266,11 @@
                 </svg>
             </button>
             <div class="flex flex-col space-y-4">
+                <a href="#channels" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-white transition">Channels</a>
                 <a href="#features" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-white transition">Features</a>
-                <a href="#api" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-white transition">API</a>
-                <a href="#use-cases" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-white transition">Use Cases</a>
+                <a href="#integrations" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-white transition">Integrations</a>
                 <button class="px-6 py-2.5 btn-primary text-white rounded-lg font-semibold">
-                    Start Building →
+                    Start Free Trial →
                 </button>
             </div>
         </div>
@@ -294,46 +295,45 @@
                         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
                         <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
                     </span>
-                    <span class="text-sm text-gray-300">Trusted by Fortune 500 Companies</span>
+                    <span class="text-sm text-gray-300">Unified Omnichannel Messaging Platform</span>
                 </div>
             </div>
             
             <!-- Main Headline -->
             <div class="text-center max-w-5xl mx-auto">
                 <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight fade-in delay-100">
-                    Real-time Transaction<br/>
-                    <span class="gradient-text">Monitoring & Intelligence</span>
+                    Every Customer Conversation<br/>
+                    <span class="gradient-text">In One Intelligent Inbox</span>
                 </h1>
                 
                 <p class="text-xl md:text-2xl text-gray-400 mb-10 max-w-3xl mx-auto fade-in delay-200">
-                    Enterprise-grade API platform for monitoring transactions with instant webhooks, 
-                    intelligent email alerts, and automated task management. Detect anomalies before they become problems.
+                    Connect with customers across WhatsApp, SMS, email, social media, and 20+ channels. 
+                    Powered by AI to deliver seamless omnichannel experiences at scale.
                 </p>
                 
                 <!-- CTA Buttons -->
                 <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12 fade-in delay-300">
                     <button class="px-8 py-4 btn-primary text-white rounded-lg font-semibold text-lg inline-flex items-center justify-center">
-                        Start Building
+                        Start Free Trial
                         <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                         </svg>
                     </button>
                     <button class="px-8 py-4 btn-secondary text-white rounded-lg font-semibold text-lg">
-                        Schedule Demo
+                        Watch Demo
                     </button>
                 </div>
                 
                 <p class="text-sm text-gray-500 fade-in delay-400">
-                    No credit card required • 14-day free trial • SOC 2 Type II certified
+                    Free 14-day trial • No credit card required • Setup in 5 minutes
                 </p>
             </div>
             
-            <!-- Demo Video Section -->
+            <!-- Demo Dashboard Preview -->
             <div class="mt-20 max-w-6xl mx-auto fade-in delay-400">
                 <div class="demo-video-wrapper rounded-2xl overflow-hidden border border-gray-800 glow-purple">
-                    <!-- Placeholder for demo -->
                     <div class="aspect-video bg-gradient-to-br from-gray-900 to-gray-800 flex items-center justify-center relative">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=675&fit=crop" alt="Dashboard Preview" class="w-full h-full object-cover opacity-50">
+                        <img src="https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?w=1200&h=675&fit=crop" alt="Unified Inbox Dashboard" class="w-full h-full object-cover opacity-50">
                         <div class="play-button">
                             <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M8 5v14l11-7z"/>
@@ -343,7 +343,7 @@
                             <svg class="w-5 h-5 text-indigo-400" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M8 5v14l11-7z"/>
                             </svg>
-                            <span class="text-white font-medium">Watch Demo</span>
+                            <span class="text-white font-medium">See ataca connect in action</span>
                             <span class="text-gray-400">• 3:47</span>
                         </div>
                     </div>
@@ -352,25 +352,85 @@
         </div>
     </section>
 
-    <!-- Trusted By Section -->
-    <section class="py-16 border-t border-b border-gray-800">
+    <!-- Channel Icons Section -->
+    <section id="channels" class="py-20 border-t border-b border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p class="text-center text-gray-500 text-sm uppercase tracking-wider mb-8">Trusted by industry leaders</p>
-            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center opacity-50">
-                <div class="text-center text-2xl font-bold text-gray-600">STRIPE</div>
-                <div class="text-center text-2xl font-bold text-gray-600">COINBASE</div>
-                <div class="text-center text-2xl font-bold text-gray-600">SHOPIFY</div>
-                <div class="text-center text-2xl font-bold text-gray-600">SQUARE</div>
-                <div class="text-center text-2xl font-bold text-gray-600">PAYPAL</div>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-3">Connect <span class="gradient-text">Every Channel</span></h2>
+                <p class="text-gray-400">Unify conversations from 20+ messaging platforms</p>
+            </div>
+            
+            <div class="grid grid-cols-3 md:grid-cols-6 lg:grid-cols-10 gap-6">
+                <!-- Channel Icons -->
+                <div class="flex flex-col items-center channel-icon">
+                    <div class="w-16 h-16 glass rounded-2xl flex items-center justify-center mb-2 hover:border-green-500">
+                        <span class="text-3xl">💬</span>
+                    </div>
+                    <span class="text-xs text-gray-400">WhatsApp</span>
+                </div>
+                <div class="flex flex-col items-center channel-icon">
+                    <div class="w-16 h-16 glass rounded-2xl flex items-center justify-center mb-2 hover:border-blue-500">
+                        <span class="text-3xl">📧</span>
+                    </div>
+                    <span class="text-xs text-gray-400">Email</span>
+                </div>
+                <div class="flex flex-col items-center channel-icon">
+                    <div class="w-16 h-16 glass rounded-2xl flex items-center justify-center mb-2 hover:border-indigo-500">
+                        <span class="text-3xl">💬</span>
+                    </div>
+                    <span class="text-xs text-gray-400">SMS</span>
+                </div>
+                <div class="flex flex-col items-center channel-icon">
+                    <div class="w-16 h-16 glass rounded-2xl flex items-center justify-center mb-2 hover:border-blue-400">
+                        <span class="text-3xl">📱</span>
+                    </div>
+                    <span class="text-xs text-gray-400">Messenger</span>
+                </div>
+                <div class="flex flex-col items-center channel-icon">
+                    <div class="w-16 h-16 glass rounded-2xl flex items-center justify-center mb-2 hover:border-pink-500">
+                        <span class="text-3xl">📸</span>
+                    </div>
+                    <span class="text-xs text-gray-400">Instagram</span>
+                </div>
+                <div class="flex flex-col items-center channel-icon">
+                    <div class="w-16 h-16 glass rounded-2xl flex items-center justify-center mb-2 hover:border-purple-500">
+                        <span class="text-3xl">💼</span>
+                    </div>
+                    <span class="text-xs text-gray-400">Slack</span>
+                </div>
+                <div class="flex flex-col items-center channel-icon">
+                    <div class="w-16 h-16 glass rounded-2xl flex items-center justify-center mb-2 hover:border-blue-600">
+                        <span class="text-3xl">🔗</span>
+                    </div>
+                    <span class="text-xs text-gray-400">Telegram</span>
+                </div>
+                <div class="flex flex-col items-center channel-icon">
+                    <div class="w-16 h-16 glass rounded-2xl flex items-center justify-center mb-2 hover:border-orange-500">
+                        <span class="text-3xl">💭</span>
+                    </div>
+                    <span class="text-xs text-gray-400">Live Chat</span>
+                </div>
+                <div class="flex flex-col items-center channel-icon">
+                    <div class="w-16 h-16 glass rounded-2xl flex items-center justify-center mb-2 hover:border-red-500">
+                        <span class="text-3xl">🎥</span>
+                    </div>
+                    <span class="text-xs text-gray-400">WeChat</span>
+                </div>
+                <div class="flex flex-col items-center channel-icon">
+                    <div class="w-16 h-16 glass rounded-2xl flex items-center justify-center mb-2 hover:border-gray-400">
+                        <span class="text-3xl">➕</span>
+                    </div>
+                    <span class="text-xs text-gray-400">+12 More</span>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Section Divider -->
-    <div class="py-20">
+    <div class="py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
-                <span class="text-indigo-400 text-sm font-semibold tracking-wider uppercase">Tailored Workflows</span>
+                <span class="text-indigo-400 text-sm font-semibold tracking-wider uppercase">Simple and Elegant Interface</span>
             </div>
         </div>
     </div>
@@ -380,131 +440,131 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold mb-4">
-                    Monitor Every Transaction<br/>with <span class="gradient-text">Precision</span>
+                    Everything You Need for<br/><span class="gradient-text">Omnichannel Success</span>
                 </h2>
                 <p class="text-xl text-gray-400 max-w-3xl mx-auto">
-                    Real-time monitoring infrastructure that scales with your business. 
-                    From webhooks to intelligent alerts, we've got you covered.
+                    From unified inboxes to AI-powered automation, ataca connect gives you the tools 
+                    to deliver exceptional customer experiences across every channel.
                 </p>
             </div>
             
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Feature 1: Webhooks -->
+                <!-- Feature 1: Unified Inbox -->
                 <div class="glass glass-hover rounded-2xl p-8 feature-card">
                     <div class="w-14 h-14 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center mb-6 glow-blue">
                         <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"/>
                         </svg>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3">Instant Webhooks</h3>
+                    <h3 class="text-2xl font-bold mb-3">Unified Inbox</h3>
                     <p class="text-gray-400 mb-6">
-                        Receive real-time events via secure webhooks with automatic retries, 
-                        signed payloads, and customizable filters. Sub-100ms delivery guaranteed.
+                        Manage all customer conversations from WhatsApp, email, SMS, social media, 
+                        and more in one centralized dashboard. Never miss a message again.
                     </p>
                     <ul class="space-y-3 text-sm">
                         <li class="flex items-start">
                             <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-gray-300">Automatic retry logic with exponential backoff</span>
+                            <span class="text-gray-300">Single timeline view for all customer interactions</span>
                         </li>
                         <li class="flex items-start">
                             <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-gray-300">HMAC SHA-256 signature verification</span>
+                            <span class="text-gray-300">Conversation history across all channels</span>
                         </li>
                         <li class="flex items-start">
                             <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-gray-300">Advanced event filtering and routing</span>
+                            <span class="text-gray-300">Smart filtering and search capabilities</span>
                         </li>
                         <li class="flex items-start">
                             <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-gray-300">99.99% delivery success rate</span>
+                            <span class="text-gray-300">Real-time message synchronization</span>
                         </li>
                     </ul>
                 </div>
 
-                <!-- Feature 2: Email Alerts -->
+                <!-- Feature 2: AI-Powered Automation -->
                 <div class="glass glass-hover rounded-2xl p-8 feature-card">
                     <div class="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mb-6 glow-purple">
                         <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
                         </svg>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3">Intelligent Email Alerts</h3>
+                    <h3 class="text-2xl font-bold mb-3">AI-Powered Automation</h3>
                     <p class="text-gray-400 mb-6">
-                        Smart email notifications powered by machine learning. Custom templates, 
-                        dynamic thresholds, and team routing based on transaction patterns.
+                        Leverage GPT-4 powered chatbots and intelligent routing to automate up to 70% 
+                        of customer inquiries. Provide 24/7 support without expanding your team.
                     </p>
                     <ul class="space-y-3 text-sm">
                         <li class="flex items-start">
                             <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-gray-300">Customizable HTML email templates</span>
+                            <span class="text-gray-300">Visual chatbot builder with no-code interface</span>
                         </li>
                         <li class="flex items-start">
                             <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-gray-300">Priority levels (Critical, High, Medium, Low)</span>
+                            <span class="text-gray-300">AI-suggested replies and auto-responses</span>
                         </li>
                         <li class="flex items-start">
                             <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-gray-300">Smart team distribution & escalation</span>
+                            <span class="text-gray-300">Intelligent routing based on intent and urgency</span>
                         </li>
                         <li class="flex items-start">
                             <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-gray-300">Anomaly detection with ML models</span>
+                            <span class="text-gray-300">Conversation summaries and sentiment analysis</span>
                         </li>
                     </ul>
                 </div>
 
-                <!-- Feature 3: Portal Tasks -->
+                <!-- Feature 3: Team Collaboration -->
                 <div class="glass glass-hover rounded-2xl p-8 feature-card">
                     <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center mb-6 glow-blue">
                         <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
                         </svg>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3">Unified Portal Dashboard</h3>
+                    <h3 class="text-2xl font-bold mb-3">Team Collaboration</h3>
                     <p class="text-gray-400 mb-6">
-                        Centralized command center for all transaction alerts. Create tasks, 
-                        assign teams, track resolution, and maintain full audit trails.
+                        Empower your team with internal notes, mentions, assignment workflows, 
+                        and performance analytics. Work together seamlessly to deliver excellence.
                     </p>
                     <ul class="space-y-3 text-sm">
                         <li class="flex items-start">
                             <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-gray-300">Automated task creation from alerts</span>
+                            <span class="text-gray-300">Private notes and @mentions for team members</span>
                         </li>
                         <li class="flex items-start">
                             <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-gray-300">Team collaboration & comments</span>
+                            <span class="text-gray-300">Shared labels, tags, and custom fields</span>
                         </li>
                         <li class="flex items-start">
                             <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-gray-300">Real-time status tracking & metrics</span>
+                            <span class="text-gray-300">Performance dashboards and analytics</span>
                         </li>
                         <li class="flex items-start">
                             <svg class="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-gray-300">Complete audit trail for compliance</span>
+                            <span class="text-gray-300">Role-based permissions and access control</span>
                         </li>
                     </ul>
                 </div>
@@ -512,188 +572,69 @@
         </div>
     </section>
 
-    <!-- API Integration Section -->
-    <section id="api" class="py-32 relative">
+    <!-- Integration Section -->
+    <section id="integrations" class="py-32 relative">
         <div class="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-900/10 to-transparent"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <!-- Left Content -->
-                <div>
-                    <span class="text-indigo-400 text-sm font-semibold tracking-wider uppercase mb-4 block">Developer Experience</span>
-                    <h2 class="text-4xl md:text-5xl font-bold mb-6">
-                        Enterprise API Built for <span class="gradient-text">Scale</span>
-                    </h2>
-                    <p class="text-xl text-gray-400 mb-8">
-                        RESTful API with SDKs in 12 languages. Comprehensive documentation, 
-                        interactive examples, and 24/7 developer support. Get started in under 5 minutes.
-                    </p>
-                    
-                    <!-- Feature Pills -->
-                    <div class="space-y-6 mb-8">
-                        <div class="flex items-start">
-                            <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                                </svg>
-                            </div>
-                            <div class="ml-4">
-                                <h3 class="text-lg font-semibold mb-1">Sub-50ms Response Times</h3>
-                                <p class="text-gray-400">Global edge network with 50+ data centers worldwide</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
-                                </svg>
-                            </div>
-                            <div class="ml-4">
-                                <h3 class="text-lg font-semibold mb-1">Bank-Grade Security</h3>
-                                <p class="text-gray-400">TLS 1.3, API keys, OAuth 2.0, and webhook signatures</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-                                </svg>
-                            </div>
-                            <div class="ml-4">
-                                <h3 class="text-lg font-semibold mb-1">99.99% Uptime SLA</h3>
-                                <p class="text-gray-400">Enterprise reliability with automatic failover</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="flex flex-wrap gap-4">
-                        <button class="px-6 py-3 btn-primary text-white rounded-lg font-semibold">
-                            View Documentation
-                        </button>
-                        <button class="px-6 py-3 btn-secondary text-white rounded-lg font-semibold">
-                            Explore API Reference
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Right Content - Code Example -->
-                <div class="order-first lg:order-last">
-                    <div class="code-block rounded-2xl p-6 shadow-2xl border border-gray-800">
-                        <!-- Terminal Header -->
-                        <div class="flex items-center space-x-2 mb-6">
-                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                            <span class="ml-4 text-gray-500 text-sm font-mono">transaction_monitor.js</span>
-                        </div>
-                        
-                        <!-- Code -->
-                        <pre class="text-sm overflow-x-auto"><code class="text-gray-300 font-mono"><span class="text-purple-400">import</span> <span class="text-blue-300">Ataca</span> <span class="text-purple-400">from</span> <span class="text-green-400">'@ataca/node'</span>;
-
-<span class="text-gray-500">// Initialize with your API key</span>
-<span class="text-purple-400">const</span> <span class="text-blue-300">client</span> = <span class="text-purple-400">new</span> <span class="text-yellow-300">Ataca</span>({
-  <span class="text-blue-300">apiKey</span>: <span class="text-green-400">process.env.ATACA_API_KEY</span>,
-  <span class="text-blue-300">environment</span>: <span class="text-green-400">'production'</span>
-});
-
-<span class="text-gray-500">// Monitor a transaction</span>
-<span class="text-purple-400">const</span> <span class="text-blue-300">transaction</span> = <span class="text-purple-400">await</span> <span class="text-blue-300">client</span>.<span class="text-yellow-300">transactions</span>.<span class="text-yellow-300">create</span>({
-  <span class="text-blue-300">amount</span>: <span class="text-orange-400">25000</span>,
-  <span class="text-blue-300">currency</span>: <span class="text-green-400">'USD'</span>,
-  <span class="text-blue-300">userId</span>: <span class="text-green-400">'usr_7k2m9p1x'</span>,
-  <span class="text-blue-300">type</span>: <span class="text-green-400">'payment'</span>,
-  <span class="text-blue-300">metadata</span>: {
-    <span class="text-blue-300">orderId</span>: <span class="text-green-400">'ord_983j2k1'</span>,
-    <span class="text-blue-300">merchantId</span>: <span class="text-green-400">'mch_5x8z'</span>,
-    <span class="text-blue-300">riskScore</span>: <span class="text-orange-400">0.12</span>
-  },
-  <span class="text-blue-300">alerts</span>: {
-    <span class="text-blue-300">webhook</span>: <span class="text-green-400">'https://api.example.com/webhooks'</span>,
-    <span class="text-blue-300">email</span>: [<span class="text-green-400">'fraud@company.com'</span>],
-    <span class="text-blue-300">createTask</span>: <span class="text-orange-400">true</span>,
-    <span class="text-blue-300">priority</span>: <span class="text-green-400">'high'</span>
-  }
-});
-
-<span class="text-gray-500">// ✅ Webhook sent automatically</span>
-<span class="text-gray-500">// ✅ Email alert if threshold exceeded</span>
-<span class="text-gray-500">// ✅ Task created in portal dashboard</span>
-
-<span class="text-blue-300">console</span>.<span class="text-yellow-300">log</span>(<span class="text-green-400">'Transaction ID:'</span>, <span class="text-blue-300">transaction</span>.<span class="text-blue-300">id</span>);</code></pre>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Use Cases Section -->
-    <section id="use-cases" class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">
-                    Built for Every <span class="gradient-text">Industry</span>
+                <span class="text-indigo-400 text-sm font-semibold tracking-wider uppercase mb-4 block">Seamless Integrations</span>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    Connect Your <span class="gradient-text">Entire Tech Stack</span>
                 </h2>
                 <p class="text-xl text-gray-400 max-w-3xl mx-auto">
-                    From fintech to gaming, our platform adapts to your unique monitoring requirements
+                    Integrate with 100+ business tools including CRMs, e-commerce platforms, 
+                    help desks, and marketing automation systems.
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Use Case Cards -->
-                <div class="glass rounded-xl p-6 hover:border-indigo-500/50 transition-all cursor-pointer">
-                    <div class="text-4xl mb-4">💳</div>
-                    <h3 class="text-xl font-semibold mb-2">Payment Processing</h3>
-                    <p class="text-gray-400 text-sm">
-                        Real-time fraud detection, chargeback prevention, and PCI-DSS compliant monitoring 
-                        for payment gateways and processors.
-                    </p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <!-- Integration Cards -->
+                <div class="glass rounded-xl p-6 text-center hover:border-indigo-500/50 transition">
+                    <div class="text-5xl mb-3">🔷</div>
+                    <h3 class="font-semibold mb-1">Salesforce</h3>
+                    <p class="text-sm text-gray-400">CRM Integration</p>
                 </div>
-                
-                <div class="glass rounded-xl p-6 hover:border-indigo-500/50 transition-all cursor-pointer">
-                    <div class="text-4xl mb-4">🔗</div>
-                    <h3 class="text-xl font-semibold mb-2">Blockchain & Crypto</h3>
-                    <p class="text-gray-400 text-sm">
-                        Monitor on-chain transactions across 50+ blockchains. Track wallet activities, 
-                        NFT transfers, and DeFi protocols.
-                    </p>
+                <div class="glass rounded-xl p-6 text-center hover:border-indigo-500/50 transition">
+                    <div class="text-5xl mb-3">🟠</div>
+                    <h3 class="font-semibold mb-1">HubSpot</h3>
+                    <p class="text-sm text-gray-400">Marketing & Sales</p>
                 </div>
-                
-                <div class="glass rounded-xl p-6 hover:border-indigo-500/50 transition-all cursor-pointer">
-                    <div class="text-4xl mb-4">🏦</div>
-                    <h3 class="text-xl font-semibold mb-2">Banking & Fintech</h3>
-                    <p class="text-gray-400 text-sm">
-                        AML compliance, suspicious activity reporting, and regulatory monitoring 
-                        for financial institutions.
-                    </p>
+                <div class="glass rounded-xl p-6 text-center hover:border-indigo-500/50 transition">
+                    <div class="text-5xl mb-3">🛍️</div>
+                    <h3 class="font-semibold mb-1">Shopify</h3>
+                    <p class="text-sm text-gray-400">E-commerce</p>
                 </div>
-                
-                <div class="glass rounded-xl p-6 hover:border-indigo-500/50 transition-all cursor-pointer">
-                    <div class="text-4xl mb-4">🛒</div>
-                    <h3 class="text-xl font-semibold mb-2">E-commerce Platforms</h3>
-                    <p class="text-gray-400 text-sm">
-                        Order tracking, refund monitoring, marketplace transaction oversight, 
-                        and seller performance analytics.
-                    </p>
+                <div class="glass rounded-xl p-6 text-center hover:border-indigo-500/50 transition">
+                    <div class="text-5xl mb-3">💼</div>
+                    <h3 class="font-semibold mb-1">Zendesk</h3>
+                    <p class="text-sm text-gray-400">Customer Support</p>
                 </div>
-                
-                <div class="glass rounded-xl p-6 hover:border-indigo-500/50 transition-all cursor-pointer">
-                    <div class="text-4xl mb-4">📊</div>
-                    <h3 class="text-xl font-semibold mb-2">SaaS & Subscriptions</h3>
-                    <p class="text-gray-400 text-sm">
-                        Recurring billing monitoring, dunning management, upgrade tracking, 
-                        and revenue recognition automation.
-                    </p>
+                <div class="glass rounded-xl p-6 text-center hover:border-indigo-500/50 transition">
+                    <div class="text-5xl mb-3">📊</div>
+                    <h3 class="font-semibold mb-1">Google Analytics</h3>
+                    <p class="text-sm text-gray-400">Analytics</p>
                 </div>
-                
-                <div class="glass rounded-xl p-6 hover:border-indigo-500/50 transition-all cursor-pointer">
-                    <div class="text-4xl mb-4">🎮</div>
-                    <h3 class="text-xl font-semibold mb-2">Gaming & NFTs</h3>
-                    <p class="text-gray-400 text-sm">
-                        In-game purchases, virtual goods trading, marketplace transactions, 
-                        and player economy monitoring.
-                    </p>
+                <div class="glass rounded-xl p-6 text-center hover:border-indigo-500/50 transition">
+                    <div class="text-5xl mb-3">💳</div>
+                    <h3 class="font-semibold mb-1">Stripe</h3>
+                    <p class="text-sm text-gray-400">Payments</p>
                 </div>
+                <div class="glass rounded-xl p-6 text-center hover:border-indigo-500/50 transition">
+                    <div class="text-5xl mb-3">📧</div>
+                    <h3 class="font-semibold mb-1">Mailchimp</h3>
+                    <p class="text-sm text-gray-400">Email Marketing</p>
+                </div>
+                <div class="glass rounded-xl p-6 text-center hover:border-indigo-500/50 transition">
+                    <div class="text-5xl mb-3">➕</div>
+                    <h3 class="font-semibold mb-1">100+ More</h3>
+                    <p class="text-sm text-gray-400">Via API & Webhooks</p>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <button class="px-8 py-3 btn-secondary text-white rounded-lg font-semibold">
+                    View All Integrations
+                </button>
             </div>
         </div>
     </section>
@@ -702,40 +643,113 @@
     <section class="py-32 relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-r from-indigo-600/20 to-purple-600/20"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-3">Trusted by <span class="gradient-text">12,000+</span> Companies Worldwide</h2>
+            </div>
             <div class="grid md:grid-cols-4 gap-12 text-center">
                 <div>
-                    <div class="text-5xl md:text-6xl font-bold mb-2 stat-number gradient-text">99.99%</div>
-                    <div class="text-gray-400 text-lg">Uptime SLA</div>
-                    <div class="text-sm text-gray-500 mt-1">Zero downtime deployments</div>
+                    <div class="text-5xl md:text-6xl font-bold mb-2 gradient-text">99.9%</div>
+                    <div class="text-gray-400 text-lg">Uptime</div>
+                    <div class="text-sm text-gray-500 mt-1">Guaranteed SLA</div>
                 </div>
                 <div>
-                    <div class="text-5xl md:text-6xl font-bold mb-2 stat-number gradient-text">&lt;50ms</div>
-                    <div class="text-gray-400 text-lg">API Latency</div>
-                    <div class="text-sm text-gray-500 mt-1">Global edge network</div>
+                    <div class="text-5xl md:text-6xl font-bold mb-2 gradient-text">70%</div>
+                    <div class="text-gray-400 text-lg">Automation Rate</div>
+                    <div class="text-sm text-gray-500 mt-1">With AI chatbots</div>
                 </div>
                 <div>
-                    <div class="text-5xl md:text-6xl font-bold mb-2 stat-number gradient-text">50B+</div>
-                    <div class="text-gray-400 text-lg">Transactions Processed</div>
-                    <div class="text-sm text-gray-500 mt-1">Monthly volume</div>
+                    <div class="text-5xl md:text-6xl font-bold mb-2 gradient-text">5B+</div>
+                    <div class="text-gray-400 text-lg">Messages</div>
+                    <div class="text-sm text-gray-500 mt-1">Processed monthly</div>
                 </div>
                 <div>
-                    <div class="text-5xl md:text-6xl font-bold mb-2 stat-number gradient-text">12K+</div>
-                    <div class="text-gray-400 text-lg">Enterprise Customers</div>
-                    <div class="text-sm text-gray-500 mt-1">Across 150+ countries</div>
+                    <div class="text-5xl md:text-6xl font-bold mb-2 gradient-text">150+</div>
+                    <div class="text-gray-400 text-lg">Countries</div>
+                    <div class="text-sm text-gray-500 mt-1">Global reach</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                    Built for <span class="gradient-text">Every Industry</span>
+                </h2>
+                <p class="text-xl text-gray-400">
+                    From e-commerce to healthcare, ataca connect adapts to your business needs
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="glass rounded-xl p-6 hover:border-indigo-500/50 transition-all">
+                    <div class="text-4xl mb-4">🛒</div>
+                    <h3 class="text-xl font-semibold mb-2">E-commerce & Retail</h3>
+                    <p class="text-gray-400 text-sm">
+                        Handle order inquiries, shipping updates, and customer support across 
+                        WhatsApp, SMS, and social media. Boost conversions with personalized messaging.
+                    </p>
+                </div>
+                
+                <div class="glass rounded-xl p-6 hover:border-indigo-500/50 transition-all">
+                    <div class="text-4xl mb-4">🏥</div>
+                    <h3 class="text-xl font-semibold mb-2">Healthcare & Wellness</h3>
+                    <p class="text-gray-400 text-sm">
+                        Schedule appointments, send reminders, provide telehealth support. 
+                        HIPAA-compliant messaging for patient communication.
+                    </p>
+                </div>
+                
+                <div class="glass rounded-xl p-6 hover:border-indigo-500/50 transition-all">
+                    <div class="text-4xl mb-4">🏦</div>
+                    <h3 class="text-xl font-semibold mb-2">Financial Services</h3>
+                    <p class="text-gray-400 text-sm">
+                        Secure customer communication for banking, insurance, and fintech. 
+                        Transaction alerts, fraud prevention, account support.
+                    </p>
+                </div>
+                
+                <div class="glass rounded-xl p-6 hover:border-indigo-500/50 transition-all">
+                    <div class="text-4xl mb-4">🎓</div>
+                    <h3 class="text-xl font-semibold mb-2">Education & E-learning</h3>
+                    <p class="text-gray-400 text-sm">
+                        Student support, course updates, admissions inquiries. 
+                        Connect with students on their preferred messaging platforms.
+                    </p>
+                </div>
+                
+                <div class="glass rounded-xl p-6 hover:border-indigo-500/50 transition-all">
+                    <div class="text-4xl mb-4">🏨</div>
+                    <h3 class="text-xl font-semibold mb-2">Hospitality & Travel</h3>
+                    <p class="text-gray-400 text-sm">
+                        Booking confirmations, guest services, travel updates. 
+                        Provide concierge-level service through omnichannel messaging.
+                    </p>
+                </div>
+                
+                <div class="glass rounded-xl p-6 hover:border-indigo-500/50 transition-all">
+                    <div class="text-4xl mb-4">💼</div>
+                    <h3 class="text-xl font-semibold mb-2">B2B & SaaS</h3>
+                    <p class="text-gray-400 text-sm">
+                        Sales enablement, customer onboarding, technical support. 
+                        Manage enterprise customer relationships at scale.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section class="py-20">
+    <section class="py-20 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold mb-4">
-                    Trusted by <span class="gradient-text">Industry Leaders</span>
+                    Loved by <span class="gradient-text">Customer Teams</span>
                 </h2>
                 <p class="text-xl text-gray-400">
-                    See what engineering teams are saying about ataca.io
+                    See what companies are saying about ataca connect
                 </p>
             </div>
             
@@ -746,18 +760,17 @@
                         <div class="flex text-yellow-400 text-lg">★★★★★</div>
                     </div>
                     <p class="text-gray-300 mb-6 leading-relaxed">
-                        "ataca.io reduced our fraud detection time from hours to seconds. 
-                        The webhook reliability is exceptional, and their API is the best-documented 
-                        I've worked with in 15 years of engineering."
+                        "ataca connect transformed our customer service. We reduced response time by 
+                        65% and our CSAT scores jumped from 72% to 93%. The unified inbox is a game-changer."
                     </p>
                     <div class="flex items-center">
                         <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
-                            SK
+                            LC
                         </div>
                         <div class="ml-4">
-                            <div class="font-semibold">Sarah Kim</div>
-                            <div class="text-sm text-gray-400">VP Engineering, PaymentCo</div>
-                            <div class="text-xs text-gray-500">Fortune 500 Fintech</div>
+                            <div class="font-semibold">Laura Chen</div>
+                            <div class="text-sm text-gray-400">VP Customer Success, ShopNow</div>
+                            <div class="text-xs text-gray-500">E-commerce • 500+ employees</div>
                         </div>
                     </div>
                 </div>
@@ -768,18 +781,17 @@
                         <div class="flex text-yellow-400 text-lg">★★★★★</div>
                     </div>
                     <p class="text-gray-300 mb-6 leading-relaxed">
-                        "We process 10M+ transactions daily. ataca.io scales effortlessly 
-                        and their support team is phenomenal. The portal dashboard gives us complete 
-                        visibility across our entire operation."
+                        "The AI chatbots handle 70% of our repetitive questions, freeing our team 
+                        to focus on complex issues. Setup was incredibly easy and ROI was immediate."
                     </p>
                     <div class="flex items-center">
                         <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
-                            MR
+                            MA
                         </div>
                         <div class="ml-4">
-                            <div class="font-semibold">Marcus Rodriguez</div>
-                            <div class="text-sm text-gray-400">CTO, GlobalTrade</div>
-                            <div class="text-xs text-gray-500">E-commerce Platform</div>
+                            <div class="font-semibold">Michael Anderson</div>
+                            <div class="text-sm text-gray-400">Head of Support, HealthTech Pro</div>
+                            <div class="text-xs text-gray-500">Healthcare SaaS • 200+ employees</div>
                         </div>
                     </div>
                 </div>
@@ -790,18 +802,17 @@
                         <div class="flex text-yellow-400 text-lg">★★★★★</div>
                     </div>
                     <p class="text-gray-300 mb-6 leading-relaxed">
-                        "Migrated from our homegrown solution to ataca.io in 2 weeks. 
-                        Cut our monitoring costs by 60% while improving detection accuracy. 
-                        The ML-powered alerts are game-changing."
+                        "WhatsApp integration alone increased our sales by 40%. Customers love the 
+                        convenience and our team loves managing everything from one platform."
                     </p>
                     <div class="flex items-center">
                         <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
-                            JC
+                            SR
                         </div>
                         <div class="ml-4">
-                            <div class="font-semibold">Jennifer Chen</div>
-                            <div class="text-sm text-gray-400">Head of Security, CryptoVault</div>
-                            <div class="text-xs text-gray-500">Blockchain Infrastructure</div>
+                            <div class="font-semibold">Sofia Rodriguez</div>
+                            <div class="text-sm text-gray-400">CMO, TrendyFashion</div>
+                            <div class="text-xs text-gray-500">Fashion Retail • $50M revenue</div>
                         </div>
                     </div>
                 </div>
@@ -814,10 +825,10 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold mb-4">
-                    <span class="gradient-text">Enterprise-Ready</span> Features
+                    <span class="gradient-text">Enterprise-Grade</span> Security & Compliance
                 </h2>
                 <p class="text-xl text-gray-400">
-                    Security, compliance, and scalability built for the most demanding workloads
+                    Built for the most demanding security and compliance requirements
                 </p>
             </div>
             
@@ -829,7 +840,7 @@
                         </svg>
                     </div>
                     <h3 class="font-semibold mb-2">SOC 2 Type II</h3>
-                    <p class="text-sm text-gray-400">Certified compliant</p>
+                    <p class="text-sm text-gray-400">Certified security</p>
                 </div>
                 
                 <div class="text-center">
@@ -839,7 +850,7 @@
                         </svg>
                     </div>
                     <h3 class="font-semibold mb-2">GDPR Compliant</h3>
-                    <p class="text-sm text-gray-400">Data residency options</p>
+                    <p class="text-sm text-gray-400">Data privacy ready</p>
                 </div>
                 
                 <div class="text-center">
@@ -848,47 +859,58 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
                         </svg>
                     </div>
-                    <h3 class="font-semibold mb-2">PCI DSS Level 1</h3>
-                    <p class="text-sm text-gray-400">Payment card security</p>
+                    <h3 class="font-semibold mb-2">HIPAA Ready</h3>
+                    <p class="text-sm text-gray-400">Healthcare compliance</p>
                 </div>
                 
                 <div class="text-center">
                     <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4"/>
                         </svg>
                     </div>
-                    <h3 class="font-semibold mb-2">99.99% SLA</h3>
-                    <p class="text-sm text-gray-400">Guaranteed uptime</p>
+                    <h3 class="font-semibold mb-2">ISO 27001</h3>
+                    <p class="text-sm text-gray-400">Information security</p>
                 </div>
             </div>
         </div>
     </section>
-   <!-- Final CTA Section -->
+
+    <!-- Final CTA Section -->
     <section class="py-32 relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-br from-indigo-600/20 via-purple-600/20 to-pink-600/20"></div>
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
             <h2 class="text-4xl md:text-6xl font-bold mb-6">
-                Start Monitoring<br/>
-                <span class="gradient-text">Transactions Today</span>
+                Start Unifying Your<br/>
+                <span class="gradient-text">Customer Conversations</span>
             </h2>
             <p class="text-xl md:text-2xl text-gray-400 mb-12">
-                Join 12,000+ companies monitoring 50B+ transactions monthly
+                Join 12,000+ companies delivering exceptional omnichannel experiences
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                 <button class="px-10 py-5 btn-primary text-white rounded-lg font-semibold text-lg inline-flex items-center justify-center">
-                    Start Building
+                    Start Free Trial
                     <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                     </svg>
                 </button>
                 <button class="px-10 py-5 btn-secondary text-white rounded-lg font-semibold text-lg">
-                    Talk to Sales
+                    Schedule Demo
                 </button>
             </div>
             <p class="text-gray-500">
-                No credit card required • 14-day free trial • Cancel anytime
+                14-day free trial • No credit card required • Setup in 5 minutes
             </p>
+            <div class="mt-12 pt-12 border-t border-gray-800">
+                <p class="text-sm text-gray-500 mb-4">Trusted by leading brands worldwide</p>
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center opacity-40">
+                    <div class="text-center text-xl font-bold text-gray-600">UBER</div>
+                    <div class="text-center text-xl font-bold text-gray-600">SHOPIFY</div>
+                    <div class="text-center text-xl font-bold text-gray-600">AIRBNB</div>
+                    <div class="text-center text-xl font-bold text-gray-600">SPOTIFY</div>
+                    <div class="text-center text-xl font-bold text-gray-600">NOTION</div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -897,24 +919,27 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8 mb-8">
                 <div>
-                    <div class="flex items-center space-x-2 mb-4">
+                    <div class="flex items-center space-x-3 mb-4">
                         <div class="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
                             <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
                             </svg>
                         </div>
-                        <span class="text-lg font-bold">ataca.io</span>
+                        <div>
+                            <div class="text-lg font-bold">ataca connect</div>
+                            <div class="text-xs text-gray-400">by ataca.io</div>
+                        </div>
                     </div>
                     <p class="text-gray-400 text-sm">
-                        Enterprise transaction monitoring for the modern web.
+                        Unified omnichannel messaging for modern businesses.
                     </p>
                 </div>
                 <div>
                     <h4 class="font-semibold mb-4">Product</h4>
                     <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#channels" class="hover:text-white transition">Channels</a></li>
                         <li><a href="#features" class="hover:text-white transition">Features</a></li>
-                        <li><a href="#api" class="hover:text-white transition">API</a></li>
-                        <li><a href="#use-cases" class="hover:text-white transition">Use Cases</a></li>
+                        <li><a href="#integrations" class="hover:text-white transition">Integrations</a></li>
                         <li><span class="cursor-pointer hover:text-white transition">Pricing</span></li>
                     </ul>
                 </div>
@@ -923,8 +948,8 @@
                     <ul class="space-y-2 text-sm text-gray-400">
                         <li><span class="cursor-pointer hover:text-white transition">Documentation</span></li>
                         <li><span class="cursor-pointer hover:text-white transition">API Reference</span></li>
-                        <li><span class="cursor-pointer hover:text-white transition">Guides</span></li>
-                        <li><span class="cursor-pointer hover:text-white transition">Support</span></li>
+                        <li><span class="cursor-pointer hover:text-white transition">Help Center</span></li>
+                        <li><span class="cursor-pointer hover:text-white transition">Community</span></li>
                     </ul>
                 </div>
                 <div>
@@ -938,7 +963,7 @@
                 </div>
             </div>
             <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-500">
-                <p>&copy; 2025 ataca.io. All rights reserved. SOC 2 Type II Certified • GDPR Compliant • PCI DSS Level 1</p>
+                <p>&copy; 2025 ataca.io. All rights reserved. SOC 2 • GDPR • HIPAA • ISO 27001</p>
             </div>
         </div>
     </footer>
