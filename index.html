@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to our startup. Simple, elegant and effective solutions.">
+    <title>Startup Landing Page</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #ffffff;
+            background-color: #121212;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem;
+            background-color: #1c1c1c;
+            border-bottom: 1px solid #333;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #888;
+        }
+
+        nav {
+            margin-top: 1rem;
+        }
+
+        nav a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #4caf50; /* Green accent */
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #4caf50;
+        }
+
+        section p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            color: #cccccc;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #1c1c1c;
+            border-top: 1px solid #333;
+            color: #888;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        footer a {
+            color: #4caf50;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #ffffff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 2rem;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+<header>
+    <h1>ATACA services</h1>
+    <p>Technology solutions</p>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section id="about">
+    <h2>About Us</h2>
+    <p>We are a forward-thinking team dedicated to delivering effective and elegant solutions
+        for complex problems. Together, we empower our clients to reach their business goals.</p>
+</section>
+
+<section id="services">
+    <h2>Our Services</h2>
+    <p>We specialize in web development, design, and digital transformation.
+        Helping your ideas become a reality has never been easier with our expertise.</p>
+</section>
+
+<section id="contact">
+    <h2>Get in Touch</h2>
+    <p>Have any questions or want to work with us?
+        Click the button below to send us a message.</p>
+    <button>Contact Us</button>
+</section>
+
+<footer>
+    <p>&copy; <span id="year"></span> Our Startup. All rights reserved.</p>
+    <p>Follow us on <a href="#">Twitter</a> or <a href="#">LinkedIn</a>.</p>
+</footer>
+
+<script>
+    // Automatically set the current year in the footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+
+</html>
