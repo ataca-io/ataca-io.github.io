@@ -225,8 +225,9 @@
                 </div>
 
                 <p class="text-gray-300 mb-6 md:mb-8">
-                    Simple transactional email delivery for your services.
-                    Send notifications, alerts, and receipts — Rail handles the infrastructure with mTLS-secured delivery over SMTP and HTTP API.
+                    Simple transactional email delivery for your services — and your websites.
+                    Send notifications, alerts, and receipts over SMTP or HTTP API, or point a static site's
+                    contact form straight at Rail and get submissions as email, no backend needed.
                 </p>
 
                 <div class="grid md:grid-cols-2 gap-6 md:gap-8">
@@ -239,6 +240,9 @@
                             <li class="flex items-center">
                                 <span class="w-2 h-2 bg-emerald-500 rounded-full mr-3 flex-shrink-0"></span>HTTP API
                             </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-emerald-500 rounded-full mr-3 flex-shrink-0"></span>HTML forms — no backend needed
+                            </li>
                         </ul>
                     </div>
                     <div>
@@ -248,7 +252,16 @@
                                 <span class="w-2 h-2 bg-emerald-500 rounded-full mr-3 flex-shrink-0"></span>mTLS authentication
                             </li>
                             <li class="flex items-center">
-                                <span class="w-2 h-2 bg-emerald-500 rounded-full mr-3 flex-shrink-0"></span>Transactional delivery
+                                <span class="w-2 h-2 bg-emerald-500 rounded-full mr-3 flex-shrink-0"></span>DKIM-signed delivery
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-emerald-500 rounded-full mr-3 flex-shrink-0"></span>Inbound email &rarr; webhooks
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-emerald-500 rounded-full mr-3 flex-shrink-0"></span>Form spam protection &amp; rate limits
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-emerald-500 rounded-full mr-3 flex-shrink-0"></span>Delivery &amp; open tracking
                             </li>
                             <li class="flex items-center">
                                 <span class="w-2 h-2 bg-emerald-500 rounded-full mr-3 flex-shrink-0"></span>Live status dashboard
@@ -333,7 +346,7 @@
     <div class="max-w-xl mx-auto">
         <h2 class="text-2xl md:text-3xl font-bold text-center mb-4">Get in Touch</h2>
         <p class="text-gray-400 text-center mb-10">Tell us about your project — we'll get back within 1–2 business days.</p>
-        <form method="post" action="https://formspree.io/f/xqeykowa" class="space-y-5">
+        <form method="post" action="https://smtp.ataca.io/f/01kykx6ma8w48f996wkb37w0x5" class="space-y-5">
             <div>
                 <label for="name" class="block text-sm text-gray-400 mb-1">Your name</label>
                 <input type="text" id="name" name="name" required
@@ -349,6 +362,8 @@
                 <textarea id="message" name="message" rows="5" required
                     class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-indigo-500"></textarea>
             </div>
+            <!-- honeypot: hidden from humans; a filled value drops the submission -->
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
             <button type="submit" class="w-full px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-medium transition">
                 Send Message
             </button>
