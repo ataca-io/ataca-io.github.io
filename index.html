@@ -6,11 +6,11 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="description"
-          content="ataca - Cloud services provider. Modern infrastructure, developer tools, and enterprise solutions.">
+          content="ataca - Messaging, email and file delivery for your services. connect, rail and depot, built and run in the EU by Narity.">
     <meta name="keywords"
           content="cloud services, infrastructure, devops, enterprise solutions, cloud computing">
     <meta property="og:title" content="ataca - Cloud Services Provider">
-    <meta property="og:description" content="Modern cloud infrastructure and developer tools for enterprises">
+    <meta property="og:description" content="Messaging, email and file delivery for your services. Built and run in the EU.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://ataca.io/og-image.png">
     <meta property="og:image:width" content="1200">
@@ -54,7 +54,7 @@
 <body class="text-white">
 
 <!-- Navigation -->
-<nav class="fixed w-full top-0 z-50" style="background: rgba(15, 23, 42, 0.9); backdrop-filter: blur(10px);">
+<nav class="fixed w-full top-0 z-50 border-b border-gray-800" style="background: rgba(15, 23, 42, 0.9); backdrop-filter: blur(10px);">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
             <!-- Logo -->
@@ -70,12 +70,12 @@
                 <a href="#services" class="text-gray-300 hover:text-white transition">Services</a>
                 <a href="#about" class="text-gray-300 hover:text-white transition">About</a>
                 <a href="#contact" class="px-5 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-medium transition">
-                    Contact Us
+                    Contact us
                 </a>
             </div>
 
             <!-- Mobile Menu Button -->
-            <button class="md:hidden" onclick="toggleMobileMenu()">
+            <button class="md:hidden w-11 h-11 -mr-2 flex items-center justify-center" onclick="toggleMobileMenu()" aria-label="Open menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                 </svg>
@@ -90,7 +90,7 @@
 <!-- Mobile Menu -->
 <div id="mobileMenu" class="fixed right-0 top-0 h-full w-72 z-50 md:hidden" style="background: #0f172a; transform: translateX(100%); transition: transform 0.3s ease-in-out;">
     <div class="p-6 pt-20">
-        <button onclick="toggleMobileMenu()" class="absolute top-6 right-6">
+        <button onclick="toggleMobileMenu()" class="absolute top-6 right-6" aria-label="Close menu">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
             </svg>
@@ -100,333 +100,224 @@
                class="text-gray-300 hover:text-white transition text-lg py-2">Services</a>
             <a href="#about" onclick="toggleMobileMenu()" class="text-gray-300 hover:text-white transition text-lg py-2">About</a>
             <a href="#contact" onclick="toggleMobileMenu()" class="mt-4 px-6 py-3 bg-indigo-600 text-white rounded-lg font-medium text-center">
-                Contact Us
+                Contact us
             </a>
         </div>
     </div>
 </div>
 
 <!-- Hero Section -->
-<section class="pt-24 pb-16 px-4 md:pt-32 md:pb-20">
-    <div class="max-w-7xl mx-auto">
-        <div class="text-center max-w-3xl mx-auto">
-            <h1 class="text-3xl md:text-6xl font-bold mb-6 leading-tight">
-                Cloud Infrastructure<br/>
-                <span style="color: #818cf8;">Built for Scale</span>
+<section class="pt-28 pb-10 px-5 md:pt-44 md:pb-24 md:px-8">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-7 flex flex-col gap-5 md:gap-7">
+            <div class="inline-flex items-center gap-2.5 text-gray-400 text-xs md:text-sm font-medium uppercase tracking-wider">
+                <span class="w-2 h-2 bg-emerald-500 rounded-full"></span>
+                Built and run in the EU by Narity
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold tracking-tight leading-[1.1]" style="text-wrap: balance;">
+                Messaging, email and file delivery <span style="color: #818cf8;">for your services.</span>
             </h1>
-
-            <p class="text-base md:text-lg text-gray-400 mb-8 px-2">
-                Modern cloud services and developer tools for enterprises. 
-                Reliable, scalable, and secure infrastructure solutions.
+            <p class="text-[17px] md:text-xl text-gray-400 max-w-[620px]" style="text-wrap: pretty;">
+                Three small, focused services with one provider behind them. Reach customers over SMS, WhatsApp,
+                Viber and email, and send files as expiring links instead of attachments.
             </p>
+            <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mt-1">
+                <a href="#contact" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-medium transition">
+                    Talk to us <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </a>
+                <a href="#services" class="inline-flex items-center justify-center px-6 py-3 text-gray-300 hover:text-white rounded-lg font-medium transition">
+                    See the three services
+                </a>
+            </div>
+        </div>
 
-            <div class="flex flex-col sm:flex-row gap-3 justify-center px-4">
-                <a href="#contact" class="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-medium transition text-center">
-                    Get Started
-                </a>
-                <a href="#services" class="px-6 py-3 border border-gray-600 hover:border-gray-500 text-white rounded-lg font-medium transition text-center">
-                    View Services
-                </a>
+        <!-- The three services, at a glance -->
+        <div class="hidden lg:flex lg:col-span-5 flex-col gap-3">
+            
+                <div class="flex items-center gap-4 px-5 py-4 bg-gray-800/50 border border-gray-700 rounded-xl">
+                    <div class="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center flex-shrink-0"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg></div>
+                    <div>
+                        <div class="font-semibold text-white">connect</div>
+                        <div class="text-sm text-gray-400">SMS, WhatsApp, Viber and email with cascade delivery</div>
+                    </div>
+                </div>
+            
+                <div class="flex items-center gap-4 px-5 py-4 bg-gray-800/50 border border-gray-700 rounded-xl">
+                    <div class="w-10 h-10 bg-emerald-600 rounded-lg flex items-center justify-center flex-shrink-0"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M22 7l-10 7L2 7"/></svg></div>
+                    <div>
+                        <div class="font-semibold text-white">rail</div>
+                        <div class="text-sm text-gray-400">Transactional email over SMTP, HTTP or a plain HTML form</div>
+                    </div>
+                </div>
+            
+                <div class="flex items-center gap-4 px-5 py-4 bg-gray-800/50 border border-gray-700 rounded-xl">
+                    <div class="w-10 h-10 bg-[#009bab] rounded-lg flex items-center justify-center flex-shrink-0"><svg class="w-5 h-5" fill="none" stroke="#0f172a" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l9-5 9 5v8l-9 5-9-5V8z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l9 5 9-5"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 13v8"/></svg></div>
+                    <div>
+                        <div class="font-semibold text-white">depot</div>
+                        <div class="text-sm text-gray-400">Short-term file storage behind expiring links</div>
+                    </div>
+                </div>
+            <div class="flex items-center gap-6 px-1 pt-1 text-[13px] text-gray-500">
+                <span>mTLS everywhere</span>
+                <span>DKIM-signed</span>
+                <span>GDPR compliant</span>
+                <span>Live status</span>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Services Section -->
-<section id="services" class="py-16 px-4 md:py-20">
-    <div class="max-w-7xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold text-center mb-4">Our Services</h2>
-        <p class="text-gray-400 text-center mb-12 md:mb-16 max-w-2xl mx-auto px-2">
-            Enterprise-grade cloud solutions tailored to your business needs.
-        </p>
-
-        <!-- connect -->
-        <div class="mb-12 md:mb-16">
-            <div class="bg-gray-800/50 rounded-2xl p-6 md:p-8 border border-gray-700">
-                <div class="flex items-center mb-6">
-                    <div class="w-10 md:w-12 h-10 md:h-12 bg-indigo-600 rounded-lg flex items-center justify-center mr-3 md:mr-4 flex-shrink-0">
-                        <svg class="w-5 md:w-6 h-5 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <h3 class="text-xl md:text-2xl font-bold"><a href="https://connect.ataca.io" target="_blank" class="hover:text-indigo-400 transition">connect</a></h3>
-                        <p class="text-gray-400 text-sm">Omnichannel Messaging Platform</p>
-                    </div>
-                </div>
-                
-                <p class="text-gray-300 mb-6 md:mb-8">
-                    Unified messaging platform for transactional notifications and customer communication. 
-                    Reach customers across SMS, WhatsApp, Viber, and Email with intelligent cascade delivery policies.
-                </p>
-
-                <div class="grid md:grid-cols-2 gap-6 md:gap-8">
-                    <div>
-                        <h4 class="font-semibold mb-3 md:mb-4 text-indigo-400">Channels</h4>
-                        <ul class="space-y-2 text-gray-300">
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-green-500 rounded-full mr-3 flex-shrink-0"></span>SMS
-                            </li>
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-green-500 rounded-full mr-3 flex-shrink-0"></span>WhatsApp
-                            </li>
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-purple-500 rounded-full mr-3 flex-shrink-0"></span>Viber
-                            </li>
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-blue-500 rounded-full mr-3 flex-shrink-0"></span>Email
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="font-semibold mb-3 md:mb-4 text-indigo-400">Features</h4>
-                        <ul class="space-y-2 text-gray-300">
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-indigo-500 rounded-full mr-3 flex-shrink-0"></span>Two-way communication
-                            </li>
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-indigo-500 rounded-full mr-3 flex-shrink-0"></span>Cascade delivery
-                            </li>
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-indigo-500 rounded-full mr-3 flex-shrink-0"></span>Transactional messages
-                            </li>
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-indigo-500 rounded-full mr-3 flex-shrink-0"></span>Delivery tracking
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="mt-6 md:mt-8">
-                    <a href="https://connect.ataca.io" target="_blank" class="inline-flex items-center px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium rounded-lg transition">
-                        Learn more
-                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
+<section id="services" class="py-12 px-5 md:py-24 md:px-8 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto flex flex-col gap-6 md:gap-12">
+        <div class="flex flex-col gap-2 md:gap-3 max-w-3xl">
+            <div class="text-xs md:text-sm font-medium uppercase tracking-wider text-indigo-400">Services</div>
+            <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Three services. One provider.</h2>
+            <p class="text-gray-400 md:text-lg">Each one does a single job well. Use them alone or together.</p>
         </div>
 
-        <!-- rail -->
-        <div class="mb-12 md:mb-16">
-            <div class="bg-gray-800/50 rounded-2xl p-6 md:p-8 border border-gray-700">
-                <div class="flex items-center mb-6">
-                    <div class="w-10 md:w-12 h-10 md:h-12 bg-emerald-600 rounded-lg flex items-center justify-center mr-3 md:mr-4 flex-shrink-0">
-                        <svg class="w-5 md:w-6 h-5 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <rect x="2" y="4" width="20" height="16" rx="2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M22 7l-10 7L2 7"/>
-                        </svg>
-                    </div>
+        <div class="grid md:grid-cols-3 gap-6">
+            
+            <div class="bg-gray-800/50 rounded-2xl p-6 md:p-8 border border-gray-700 flex flex-col gap-5 md:gap-6">
+                <div class="flex items-center gap-3 md:gap-4">
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-indigo-600 rounded-lg flex items-center justify-center flex-shrink-0"><svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg></div>
                     <div>
-                        <h3 class="text-xl md:text-2xl font-bold"><a href="https://rail.ataca.io" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition">rail</a></h3>
-                        <p class="text-gray-400 text-sm">Transactional Email Delivery</p>
+                        <h3 class="text-xl md:text-2xl font-bold">connect</h3>
+                        <p class="text-gray-400 text-sm">Omnichannel messaging</p>
                     </div>
                 </div>
-
-                <p class="text-gray-300 mb-6 md:mb-8">
-                    Simple transactional email delivery for your services — and your websites.
-                    Send notifications, alerts, and receipts over SMTP or HTTP API, or point a static site's
-                    contact form straight at Rail and get submissions as email, no backend needed.
-                </p>
-
-                <div class="grid md:grid-cols-2 gap-6 md:gap-8">
-                    <div>
-                        <h4 class="font-semibold mb-3 md:mb-4 text-emerald-400">Integration Methods</h4>
-                        <ul class="space-y-2 text-gray-300">
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-emerald-500 rounded-full mr-3 flex-shrink-0"></span>SMTP Relay
-                            </li>
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-emerald-500 rounded-full mr-3 flex-shrink-0"></span>HTTP API
-                            </li>
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-emerald-500 rounded-full mr-3 flex-shrink-0"></span>HTML forms — no backend needed
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="font-semibold mb-3 md:mb-4 text-emerald-400">Features</h4>
-                        <ul class="space-y-2 text-gray-300">
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-emerald-500 rounded-full mr-3 flex-shrink-0"></span>mTLS authentication
-                            </li>
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-emerald-500 rounded-full mr-3 flex-shrink-0"></span>DKIM-signed delivery
-                            </li>
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-emerald-500 rounded-full mr-3 flex-shrink-0"></span>Inbound email &rarr; webhooks
-                            </li>
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-emerald-500 rounded-full mr-3 flex-shrink-0"></span>Form spam protection &amp; rate limits
-                            </li>
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-emerald-500 rounded-full mr-3 flex-shrink-0"></span>Delivery &amp; open tracking
-                            </li>
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-emerald-500 rounded-full mr-3 flex-shrink-0"></span>Live status dashboard
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="mt-6 md:mt-8">
-                    <a href="https://rail.ataca.io" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium rounded-lg transition">
-                        Learn more
-                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                        </svg>
-                    </a>
-                </div>
+                <p class="text-gray-300 text-[15px] md:text-base">One API for transactional notifications and customer conversations. Set a cascade policy and connect tries the next channel when the first one fails.</p>
+                <ul class="space-y-2 text-gray-300 text-[15px]">
+                    <li class="flex items-center"><span class="w-2 h-2 bg-indigo-500 rounded-full mr-3 flex-shrink-0"></span>SMS, WhatsApp, Viber and email</li>
+                    <li class="flex items-center"><span class="w-2 h-2 bg-indigo-500 rounded-full mr-3 flex-shrink-0"></span>Cascade delivery policies</li>
+                    <li class="flex items-center"><span class="w-2 h-2 bg-indigo-500 rounded-full mr-3 flex-shrink-0"></span>Two-way communication</li>
+                    <li class="flex items-center"><span class="w-2 h-2 bg-indigo-500 rounded-full mr-3 flex-shrink-0"></span>Delivery tracking</li>
+                </ul>
+                <a href="https://connect.ataca.io" target="_blank" rel="noopener noreferrer" class="mt-auto inline-flex items-center gap-2 text-indigo-400 hover:text-indigo-300 font-medium text-[15px] transition">connect.ataca.io <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
             </div>
-        </div>
-
-        <!-- depot -->
-        <div class="mb-12 md:mb-16">
-            <div class="bg-gray-800/50 rounded-2xl p-6 md:p-8 border border-gray-700">
-                <div class="flex items-center mb-6">
-                    <div class="w-10 md:w-12 h-10 md:h-12 bg-[#009bab] rounded-lg flex items-center justify-center mr-3 md:mr-4 flex-shrink-0">
-                        <svg class="w-5 md:w-6 h-5 md:h-6" fill="none" stroke="#0f172a" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l9-5 9 5v8l-9 5-9-5V8z"/>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l9 5 9-5"/>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 13v8"/>
-                        </svg>
+            
+            <div class="bg-gray-800/50 rounded-2xl p-6 md:p-8 border border-gray-700 flex flex-col gap-5 md:gap-6">
+                <div class="flex items-center gap-3 md:gap-4">
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-emerald-600 rounded-lg flex items-center justify-center flex-shrink-0"><svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M22 7l-10 7L2 7"/></svg></div>
+                    <div>
+                        <h3 class="text-xl md:text-2xl font-bold">rail</h3>
+                        <p class="text-gray-400 text-sm">Transactional email</p>
                     </div>
+                </div>
+                <p class="text-gray-300 text-[15px] md:text-base">Send notifications, alerts and receipts over SMTP or HTTP. Or point a static site's contact form at rail and get submissions as email, with no backend.</p>
+                <ul class="space-y-2 text-gray-300 text-[15px]">
+                    <li class="flex items-center"><span class="w-2 h-2 bg-emerald-500 rounded-full mr-3 flex-shrink-0"></span>SMTP relay, HTTP API, HTML forms</li>
+                    <li class="flex items-center"><span class="w-2 h-2 bg-emerald-500 rounded-full mr-3 flex-shrink-0"></span>mTLS auth, DKIM-signed delivery</li>
+                    <li class="flex items-center"><span class="w-2 h-2 bg-emerald-500 rounded-full mr-3 flex-shrink-0"></span>Inbound email to webhooks</li>
+                    <li class="flex items-center"><span class="w-2 h-2 bg-emerald-500 rounded-full mr-3 flex-shrink-0"></span>Spam protection, open tracking, live status</li>
+                </ul>
+                <a href="https://rail.ataca.io" target="_blank" rel="noopener noreferrer" class="mt-auto inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 font-medium text-[15px] transition">rail.ataca.io <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
+            </div>
+            
+            <div class="bg-gray-800/50 rounded-2xl p-6 md:p-8 border border-gray-700 flex flex-col gap-5 md:gap-6">
+                <div class="flex items-center gap-3 md:gap-4">
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-[#009bab] rounded-lg flex items-center justify-center flex-shrink-0"><svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="#0f172a" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l9-5 9 5v8l-9 5-9-5V8z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l9 5 9-5"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 13v8"/></svg></div>
                     <div>
                         <h3 class="text-xl md:text-2xl font-bold">depot</h3>
-                        <p class="text-gray-400 text-sm">Short-term File Storage</p>
+                        <p class="text-gray-400 text-sm">Short-term file storage</p>
                     </div>
                 </div>
-
-                <p class="text-gray-300 mb-6 md:mb-8">
-                    Short-term storage for the files your services send. Upload a file over mTLS, get back an
-                    expiring link, and put the link in the email instead of the attachment &mdash; no base64 bloat,
-                    and no copy sitting in every mailbox it reached.
-                </p>
-
-                <div class="grid md:grid-cols-2 gap-6 md:gap-8">
-                    <div>
-                        <h4 class="font-semibold mb-3 md:mb-4 text-[#6ab7c2]">Integration Methods</h4>
-                        <ul class="space-y-2 text-gray-300">
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-[#009bab] rounded-full mr-3 flex-shrink-0"></span>Streaming HTTP upload
-                            </li>
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-[#009bab] rounded-full mr-3 flex-shrink-0"></span>Live upload progress
-                            </li>
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-[#009bab] rounded-full mr-3 flex-shrink-0"></span>Recipients download in a browser &mdash; no login
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="font-semibold mb-3 md:mb-4 text-[#6ab7c2]">Features</h4>
-                        <ul class="space-y-2 text-gray-300">
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-[#009bab] rounded-full mr-3 flex-shrink-0"></span>mTLS authentication
-                            </li>
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-[#009bab] rounded-full mr-3 flex-shrink-0"></span>Per-file TTL, seven days by default
-                            </li>
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-[#009bab] rounded-full mr-3 flex-shrink-0"></span>Expired files purged, links answer 410 Gone
-                            </li>
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-[#009bab] rounded-full mr-3 flex-shrink-0"></span>Resumable downloads, forced as attachments
-                            </li>
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-[#009bab] rounded-full mr-3 flex-shrink-0"></span>Pairs with Rail for email attachments
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="mt-6 md:mt-8">
-                    <a href="#contact" class="inline-flex items-center px-5 py-2.5 bg-[#009bab] hover:bg-[#008494] text-slate-900 text-sm font-semibold rounded-lg transition">
-                        Get in touch
-                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-                        </svg>
-                    </a>
-                </div>
+                <p class="text-gray-300 text-[15px] md:text-base">Upload a file over mTLS and get back an expiring link. Put the link in the email instead of the attachment: no base64 bloat, no copy left in every mailbox.</p>
+                <ul class="space-y-2 text-gray-300 text-[15px]">
+                    <li class="flex items-center"><span class="w-2 h-2 bg-[#009bab] rounded-full mr-3 flex-shrink-0"></span>Streaming upload with live progress</li>
+                    <li class="flex items-center"><span class="w-2 h-2 bg-[#009bab] rounded-full mr-3 flex-shrink-0"></span>Per-file TTL, seven days by default</li>
+                    <li class="flex items-center"><span class="w-2 h-2 bg-[#009bab] rounded-full mr-3 flex-shrink-0"></span>Browser download, no login needed</li>
+                    <li class="flex items-center"><span class="w-2 h-2 bg-[#009bab] rounded-full mr-3 flex-shrink-0"></span>Expired links answer 410 Gone</li>
+                </ul>
+                <a href="#contact" class="mt-auto inline-flex items-center gap-2 text-[#6ab7c2] hover:text-[#8fcbd3] font-medium text-[15px] transition">Ask about depot <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></a>
             </div>
         </div>
 
-        <!-- Other Services Grid -->
-        <div class="grid md:grid-cols-3 gap-4 md:gap-6">
-            <div class="bg-gray-800/50 rounded-xl p-5 md:p-6 border border-gray-700">
-                <div class="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center mb-4">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/>
-                    </svg>
-                </div>
-                <h4 class="text-lg font-semibold mb-2">Infrastructure</h4>
-                <p class="text-gray-400 text-sm">Scalable cloud infrastructure with high availability.</p>
+        <!-- Better together -->
+        <div class="grid lg:grid-cols-12 gap-4 lg:gap-8 items-center p-6 lg:p-10 border border-gray-800 rounded-2xl">
+            <div class="lg:col-span-4 flex flex-col gap-2">
+                <h3 class="text-xl md:text-2xl font-semibold tracking-tight">Better together</h3>
+                <p class="text-gray-400 text-[15px]">rail sends the email, depot serves the file. The recipient gets a link that works for seven days and then answers 410 Gone.</p>
             </div>
-
-            <div class="bg-gray-800/50 rounded-xl p-5 md:p-6 border border-gray-700">
-                <div class="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center mb-4">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-                    </svg>
-                </div>
-                <h4 class="text-lg font-semibold mb-2">DevOps</h4>
-                <p class="text-gray-400 text-sm">CI/CD pipelines and automation solutions.</p>
-            </div>
-
-            <div class="bg-gray-800/50 rounded-xl p-5 md:p-6 border border-gray-700">
-                <div class="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center mb-4">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-                    </svg>
-                </div>
-                <h4 class="text-lg font-semibold mb-2">Security</h4>
-                <p class="text-gray-400 text-sm">Cloud security audits and compliance.</p>
+            <div class="lg:col-span-8 flex flex-col lg:flex-row lg:items-center gap-2 lg:gap-0">
+                
+                    <div class="flex lg:flex-col items-center lg:items-start gap-3 lg:gap-1 px-4 py-3 lg:px-5 lg:py-4 border border-gray-700 rounded-xl lg:min-w-[150px]">
+                        <div class="text-xs uppercase tracking-wider text-gray-500 min-w-[88px] lg:min-w-0">Your service</div>
+                        <div class="font-semibold text-white text-[15px] md:text-base">POST invoice.pdf</div>
+                    </div>
+                <svg class="hidden lg:block w-12 h-6 flex-shrink-0" viewBox="0 0 48 24" fill="none" stroke="#4b5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h36m0 0l-6-6m6 6l-6 6"/></svg>
+                
+                    <div class="flex lg:flex-col items-center lg:items-start gap-3 lg:gap-1 px-4 py-3 lg:px-5 lg:py-4 border border-[#009bab] rounded-xl lg:min-w-[150px]">
+                        <div class="text-xs uppercase tracking-wider text-[#6ab7c2] min-w-[88px] lg:min-w-0">depot</div>
+                        <div class="font-semibold text-white text-[15px] md:text-base">Expiring link</div>
+                    </div>
+                <svg class="hidden lg:block w-12 h-6 flex-shrink-0" viewBox="0 0 48 24" fill="none" stroke="#4b5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h36m0 0l-6-6m6 6l-6 6"/></svg>
+                
+                    <div class="flex lg:flex-col items-center lg:items-start gap-3 lg:gap-1 px-4 py-3 lg:px-5 lg:py-4 border border-emerald-600 rounded-xl lg:min-w-[150px]">
+                        <div class="text-xs uppercase tracking-wider text-emerald-400 min-w-[88px] lg:min-w-0">rail</div>
+                        <div class="font-semibold text-white text-[15px] md:text-base">Email with link</div>
+                    </div>
+                <svg class="hidden lg:block w-12 h-6 flex-shrink-0" viewBox="0 0 48 24" fill="none" stroke="#4b5563" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h36m0 0l-6-6m6 6l-6 6"/></svg>
+                
+                    <div class="flex lg:flex-col items-center lg:items-start gap-3 lg:gap-1 px-4 py-3 lg:px-5 lg:py-4 border border-gray-700 rounded-xl lg:min-w-[150px]">
+                        <div class="text-xs uppercase tracking-wider text-gray-500 min-w-[88px] lg:min-w-0">Recipient</div>
+                        <div class="font-semibold text-white text-[15px] md:text-base">Downloads in browser</div>
+                    </div>
             </div>
         </div>
     </div>
 </section>
 
 <!-- About Section -->
-<section id="about" class="py-16 px-4 md:py-20 border-t border-gray-800">
-    <div class="max-w-7xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold text-center mb-4">About ataca</h2>
-        <p class="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
-            ataca is a cloud services platform built by <a href="https://narity.com" target="_blank" class="text-indigo-400 hover:text-indigo-300">Narity</a>, a software consulting company with 20+ years of engineering experience.
-        </p>
-        <div class="grid md:grid-cols-3 gap-6">
-            <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700 text-center">
-                <div class="text-3xl font-bold text-indigo-400 mb-2">20+</div>
-                <div class="text-gray-300 font-medium">Years Experience</div>
-            </div>
-            <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700 text-center">
-                <div class="text-3xl font-bold text-indigo-400 mb-2">EU</div>
-                <div class="text-gray-300 font-medium">Based & GDPR Compliant</div>
-            </div>
-            <div class="bg-gray-800/50 rounded-xl p-6 border border-gray-700 text-center">
-                <div class="text-3xl font-bold text-indigo-400 mb-2">24/7</div>
-                <div class="text-gray-300 font-medium">Infrastructure Reliability</div>
-            </div>
+<section id="about" class="py-12 px-5 md:py-20 md:px-8 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+        <div class="lg:col-span-6 flex flex-col gap-2 md:gap-4">
+            <div class="text-xs md:text-sm font-medium uppercase tracking-wider text-indigo-400">About</div>
+            <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Built by Narity</h2>
+            <p class="text-gray-400 md:text-lg">
+                ataca is the cloud services platform of <a href="https://narity.com" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-300">Narity</a>,
+                a software consulting company with 20+ years of engineering experience. The same team also consults on
+                cloud infrastructure, CI/CD pipelines and security audits.
+            </p>
         </div>
+        <dl class="lg:col-span-5 lg:col-start-8 border-t border-gray-700">
+            <div class="flex items-baseline gap-4 md:gap-5 py-4 md:py-5 border-b border-gray-700">
+                <dt class="text-2xl md:text-[28px] font-bold text-indigo-400 min-w-[72px] md:min-w-[88px]">20+</dt>
+                <dd class="text-gray-300 font-medium text-[15px] md:text-base">Years of engineering experience</dd>
+            </div>
+            <div class="flex items-baseline gap-4 md:gap-5 py-4 md:py-5 border-b border-gray-700">
+                <dt class="text-2xl md:text-[28px] font-bold text-indigo-400 min-w-[72px] md:min-w-[88px]">EU</dt>
+                <dd class="text-gray-300 font-medium text-[15px] md:text-base">Based and GDPR compliant</dd>
+            </div>
+            <div class="flex items-baseline gap-4 md:gap-5 py-4 md:py-5 border-b border-gray-700">
+                <dt class="text-2xl md:text-[28px] font-bold text-indigo-400 min-w-[72px] md:min-w-[88px]">24/7</dt>
+                <dd class="text-gray-300 font-medium text-[15px] md:text-base">Infrastructure reliability</dd>
+            </div>
+        </dl>
     </div>
 </section>
 
 <!-- Contact Section -->
-<section id="contact" class="py-16 px-4 md:py-20 border-t border-gray-800">
-    <div class="max-w-xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold text-center mb-4">Get in Touch</h2>
-        <p class="text-gray-400 text-center mb-10">Tell us about your project — we'll get back within 1–2 business days.</p>
-        <form method="post" action="https://smtp.ataca.io/f/01kykx6ma8w48f996wkb37w0x5" class="space-y-5">
-            <div>
-                <label for="name" class="block text-sm text-gray-400 mb-1">Your name</label>
-                <input type="text" id="name" name="name" required
-                    class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-indigo-500">
-            </div>
-            <div>
-                <label for="email" class="block text-sm text-gray-400 mb-1">Email</label>
-                <input type="email" id="email" name="email" required
-                    class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-indigo-500">
+<section id="contact" class="py-12 px-5 md:py-24 md:px-8 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+        <div class="lg:col-span-5 flex flex-col gap-2 md:gap-4">
+            <div class="text-xs md:text-sm font-medium uppercase tracking-wider text-indigo-400">Contact</div>
+            <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Get in touch</h2>
+            <p class="text-gray-400 md:text-lg">Tell us about your project. We reply within 1 to 2 business days.</p>
+            <p class="hidden lg:block text-sm text-gray-500 mt-2">This form is sent through rail. Attachments go through depot.</p>
+        </div>
+        <form method="post" action="https://smtp.ataca.io/f/01kykx6ma8w48f996wkb37w0x5" class="lg:col-span-6 lg:col-start-7 flex flex-col gap-4 md:gap-5">
+            <div class="grid sm:grid-cols-2 gap-4 md:gap-5">
+                <div>
+                    <label for="name" class="block text-sm text-gray-400 mb-1">Your name</label>
+                    <input type="text" id="name" name="name" required
+                        class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-indigo-500">
+                </div>
+                <div>
+                    <label for="email" class="block text-sm text-gray-400 mb-1">Email</label>
+                    <input type="email" id="email" name="email" required
+                        class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-indigo-500">
+                </div>
             </div>
             <div>
                 <label for="message" class="block text-sm text-gray-400 mb-1">Message</label>
@@ -445,57 +336,53 @@
             </div>
             <!-- honeypot: hidden from humans; a filled value drops the submission -->
             <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
-            <button type="submit" class="w-full px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-medium transition">
-                Send Message
+            <button type="submit" class="w-full sm:w-auto sm:self-start px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-medium transition">
+                Send message
             </button>
+            <p class="lg:hidden text-[13px] text-gray-500">Sent through rail. Attachments go through depot.</p>
         </form>
     </div>
 </section>
 
 <!-- Footer -->
-<footer class="border-t border-gray-800 py-10 md:py-12 mt-16 md:mt-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-8">
-            <div class="col-span-2 md:col-span-1">
-                <div class="flex items-center space-x-3 mb-4">
+<footer class="border-t border-gray-800 py-10 md:py-12">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-3 lg:grid-cols-12 gap-6 md:gap-8 mb-8">
+            <div class="col-span-3 lg:col-span-5">
+                <div class="flex items-center space-x-3 mb-3 md:mb-4">
                     <div class="w-8 h-8 bg-indigo-600 rounded flex items-center justify-center flex-shrink-0">
                         <span class="text-white font-bold">a</span>
                     </div>
                     <div class="text-lg font-semibold">ataca</div>
                 </div>
-                <p class="text-gray-400 text-sm">
-                    Cloud services provider for modern enterprises.
+                <p class="text-gray-400 text-sm max-w-xs">
+                    Messaging, email and file delivery for your services. A Narity project.
                 </p>
             </div>
-            <div>
-                <h4 class="font-semibold mb-4">Services</h4>
+            <div class="lg:col-span-2 lg:col-start-7">
+                <h4 class="font-semibold text-sm mb-3 md:mb-4">Services</h4>
                 <ul class="space-y-2 text-sm text-gray-400">
-                    <li><a href="https://connect.ataca.io" target="_blank" class="hover:text-white transition">Connect</a></li>
-                    <li><a href="https://rail.ataca.io" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Rail</a></li>
-                    <li><a href="#services" class="hover:text-white transition">Depot</a></li>
-                    <li><a href="#services" class="hover:text-white transition">Infrastructure</a></li>
-                    <li><a href="#services" class="hover:text-white transition">DevOps</a></li>
-                    <li><a href="#services" class="hover:text-white transition">Security</a></li>
+                    <li><a href="https://connect.ataca.io" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">connect</a></li>
+                    <li><a href="https://rail.ataca.io" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">rail</a></li>
+                    <li><a href="#services" class="hover:text-white transition">depot</a></li>
+                </ul>
+            </div>
+            <div class="lg:col-span-2">
+                <h4 class="font-semibold text-sm mb-3 md:mb-4">Company</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="https://narity.com" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Narity</a></li>
                     <li><a href="#contact" class="hover:text-white transition">Consulting</a></li>
                 </ul>
             </div>
-            <div>
-                <h4 class="font-semibold mb-4">Legal</h4>
+            <div class="lg:col-span-2">
+                <h4 class="font-semibold text-sm mb-3 md:mb-4">Legal</h4>
                 <ul class="space-y-2 text-sm text-gray-400">
-                    <li><a href="privacy.html" class="hover:text-white transition">Privacy Policy</a></li>
+                    <li><a href="privacy.html" class="hover:text-white transition">Privacy and GDPR</a></li>
                     <li><a href="terms.html" class="hover:text-white transition">Terms</a></li>
-                    <li><a href="privacy.html" class="hover:text-white transition">GDPR</a></li>
                 </ul>
             </div>
-            <div>
-                <h4 class="font-semibold mb-4">Company</h4>
-                <a href="https://narity.com" target="_blank" class="hover:text-white transition block">
-                    <img src="https://narity.com/assets/narity-logo-alt-wordmark.svg" alt="Narity" class="h-5 mb-1">
-                    <span class="text-sm text-gray-400">A Narity project</span>
-                </a>
-            </div>
         </div>
-        <div class="border-t border-gray-800 pt-6 md:pt-8 text-center text-sm text-gray-500">
+        <div class="border-t border-gray-800 pt-6 md:pt-8 text-sm text-gray-500">
             <p>&copy; 2026 ataca.io. All rights reserved.</p>
         </div>
     </div>
