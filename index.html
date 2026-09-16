@@ -438,6 +438,10 @@
                 <input type="file" id="attachment" name="file" accept="application/pdf,image/png,image/jpeg"
                     class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-gray-400 text-sm file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:bg-gray-700 file:text-gray-200 hover:file:bg-gray-600 file:cursor-pointer">
                 <p id="uploadStatus" class="mt-2 text-sm text-gray-400 hidden"></p>
+                <div id="uploadBar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"
+                    class="mt-2 h-1.5 bg-gray-700 rounded-full overflow-hidden hidden">
+                    <div id="uploadBarFill" class="h-full bg-indigo-500 transition-all duration-150" style="width: 0%"></div>
+                </div>
             </div>
             <!-- honeypot: hidden from humans; a filled value drops the submission -->
             <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -534,10 +538,44 @@
     const contactForm = document.querySelector('#contact form');
     const fileInput = document.getElementById('attachment');
     const uploadStatus = document.getElementById('uploadStatus');
+    const uploadBar = document.getElementById('uploadBar');
+    const uploadBarFill = document.getElementById('uploadBarFill');
 
     function setUploadStatus(text, isError) {
         uploadStatus.textContent = text;
         uploadStatus.className = 'mt-2 text-sm ' + (isError ? 'text-red-400' : 'text-gray-400');
+    }
+
+    function setUploadProgress(fraction) {
+        const percent = Math.round(fraction * 100);
+        uploadBar.classList.remove('hidden');
+        uploadBar.setAttribute('aria-valuenow', percent);
+        uploadBarFill.style.width = percent + '%';
+    }
+
+    // XMLHttpRequest, not fetch: only xhr.upload reports how many bytes have
+    // left the browser. Resolves with depot's JSON body.
+    function uploadToDepot(url, file, onProgress) {
+        return new Promise(function (resolve, reject) {
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', url);
+            xhr.setRequestHeader('Content-Type', file.type || 'application/octet-stream');
+            xhr.upload.addEventListener('progress', function (event) {
+                if (event.lengthComputable) onProgress(event.loaded / event.total);
+            });
+            xhr.upload.addEventListener('load', function () { onProgress(1); });
+            xhr.addEventListener('load', function () {
+                let body = {};
+                try { body = JSON.parse(xhr.responseText); } catch (err) { /* not JSON */ }
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    resolve(body);
+                    return;
+                }
+                reject(new Error(body.error === 'infected' ? 'That file failed the virus scan.' : 'Upload failed.'));
+            });
+            xhr.addEventListener('error', function () { reject(new Error('Upload failed.')); });
+            xhr.send(file);
+        });
     }
 
     contactForm.addEventListener('submit', async function (event) {
@@ -548,6 +586,7 @@
         const button = contactForm.querySelector('button[type=submit]');
         button.disabled = true;
         setUploadStatus('Uploading ' + file.name + '…');
+        setUploadProgress(0);
 
         try {
             const grantRes = await fetch(contactForm.action + '/upload-grant', {
@@ -558,16 +597,17 @@
             const grant = await grantRes.json();
             if (file.size > grant.max_bytes) throw new Error('That file is too large.');
 
-            const upload = await fetch(grant.upload_url + '?filename=' + encodeURIComponent(file.name), {
-                method: 'POST',
-                headers: { 'Content-Type': file.type || 'application/octet-stream' },
-                body: file
-            });
-            if (!upload.ok) {
-                const body = await upload.json().catch(function () { return {}; });
-                throw new Error(body.error === 'infected' ? 'That file failed the virus scan.' : 'Upload failed.');
-            }
-            const result = await upload.json();
+            const result = await uploadToDepot(
+                grant.upload_url + '?filename=' + encodeURIComponent(file.name),
+                file,
+                function (fraction) {
+                    setUploadProgress(fraction);
+                    setUploadStatus(fraction < 1
+                        ? 'Uploading ' + file.name + ' — ' + Math.round(fraction * 100) + '%'
+                        : 'Scanning ' + file.name + '…');
+                });
+
+            if (!result.id) throw new Error('Upload failed.');
 
             const hidden = document.createElement('input');
             hidden.type = 'hidden';
@@ -575,6 +615,7 @@
             hidden.value = result.id;
             contactForm.appendChild(hidden);
         } catch (err) {
+            uploadBar.classList.add('hidden');
             setUploadStatus(err.message + ' Remove the file and send the message without it.', true);
             button.disabled = false;
             return;
