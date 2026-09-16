@@ -433,6 +433,12 @@
                 <textarea id="message" name="message" rows="5" required
                     class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-indigo-500"></textarea>
             </div>
+            <div>
+                <label for="attachment" class="block text-sm text-gray-400 mb-1">Attachment <span class="text-gray-500">(optional — PDF, PNG or JPEG, up to 10 MB)</span></label>
+                <input type="file" id="attachment" name="file" accept="application/pdf,image/png,image/jpeg"
+                    class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-gray-400 text-sm file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:bg-gray-700 file:text-gray-200 hover:file:bg-gray-600 file:cursor-pointer">
+                <p id="uploadStatus" class="mt-2 text-sm text-gray-400 hidden"></p>
+            </div>
             <!-- honeypot: hidden from humans; a filled value drops the submission -->
             <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
             <button type="submit" class="w-full px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-medium transition">
@@ -521,6 +527,61 @@
             overlay.classList.add('hidden');
             document.body.style.overflow = '';
         }
+    });
+
+    // Attachment: mint an upload grant from rail, send the file straight to
+    // depot, then post the form with the returned file id as _attachment.
+    const contactForm = document.querySelector('#contact form');
+    const fileInput = document.getElementById('attachment');
+    const uploadStatus = document.getElementById('uploadStatus');
+
+    function setUploadStatus(text, isError) {
+        uploadStatus.textContent = text;
+        uploadStatus.className = 'mt-2 text-sm ' + (isError ? 'text-red-400' : 'text-gray-400');
+    }
+
+    contactForm.addEventListener('submit', async function (event) {
+        const file = fileInput.files[0];
+        if (!file) return;
+        event.preventDefault();
+
+        const button = contactForm.querySelector('button[type=submit]');
+        button.disabled = true;
+        setUploadStatus('Uploading ' + file.name + '…');
+
+        try {
+            const grantRes = await fetch(contactForm.action + '/upload-grant', {
+                method: 'POST',
+                headers: { Accept: 'application/json' }
+            });
+            if (!grantRes.ok) throw new Error('Attachments are unavailable right now.');
+            const grant = await grantRes.json();
+            if (file.size > grant.max_bytes) throw new Error('That file is too large.');
+
+            const upload = await fetch(grant.upload_url + '?filename=' + encodeURIComponent(file.name), {
+                method: 'POST',
+                headers: { 'Content-Type': file.type || 'application/octet-stream' },
+                body: file
+            });
+            if (!upload.ok) {
+                const body = await upload.json().catch(function () { return {}; });
+                throw new Error(body.error === 'infected' ? 'That file failed the virus scan.' : 'Upload failed.');
+            }
+            const result = await upload.json();
+
+            const hidden = document.createElement('input');
+            hidden.type = 'hidden';
+            hidden.name = '_attachment';
+            hidden.value = result.id;
+            contactForm.appendChild(hidden);
+        } catch (err) {
+            setUploadStatus(err.message + ' Remove the file and send the message without it.', true);
+            button.disabled = false;
+            return;
+        }
+
+        fileInput.disabled = true; // keep the bytes out of the post
+        contactForm.submit();
     });
 </script>
 
