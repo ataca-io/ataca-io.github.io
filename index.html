@@ -51,7 +51,7 @@
             border-radius: 5px;
         }
 
-        a:focus-visible, button:focus-visible {
+        a:focus-visible, button:focus-visible, input[type=file]:focus-visible {
             outline: 2px solid #a5b4fc;
             outline-offset: 2px;
         }
@@ -75,7 +75,7 @@
             <div class="hidden md:flex items-center space-x-8">
                 <a href="#services" class="text-muted text-sm font-medium hover:text-white transition">Services</a>
                 <a href="#about" class="text-muted text-sm font-medium hover:text-white transition">About</a>
-                <a href="#contact" class="px-5 py-2 bg-accent hover:bg-accent-light text-bg rounded-lg font-semibold transition">
+                <a href="#contact" class="h-10 px-4 inline-flex items-center text-sm bg-accent hover:bg-accent-light text-bg rounded-lg font-semibold transition">
                     Contact us
                 </a>
             </div>
@@ -105,7 +105,7 @@
             <a href="#services" onclick="toggleMobileMenu()"
                class="text-muted hover:text-white transition text-lg py-2">Services</a>
             <a href="#about" onclick="toggleMobileMenu()" class="text-muted hover:text-white transition text-lg py-2">About</a>
-            <a href="#contact" onclick="toggleMobileMenu()" class="mt-4 px-6 py-3 bg-accent hover:bg-accent-light text-bg rounded-lg font-semibold text-center">
+            <a href="#contact" onclick="toggleMobileMenu()" class="mt-4 px-6 h-11 inline-flex items-center justify-center text-sm bg-accent hover:bg-accent-light text-bg rounded-lg font-semibold text-center">
                 Contact us
             </a>
         </div>
