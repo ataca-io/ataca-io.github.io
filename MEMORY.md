@@ -1,7 +1,7 @@
 # Project: ataca.io
 
 ## Overview
-GitHub Pages landing page for ataca.io - a cloud services provider. Connect is one of several offerings.
+GitHub Pages landing page for ataca.io - a cloud services provider.
 
 ## Tech Stack
 - Pure HTML/CSS/JS (single page)
